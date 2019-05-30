@@ -19,6 +19,7 @@ import java.util.ArrayList;
 13. Теги;
 14. Приложенные файлы.
 * */
+
 enum event_type{ // спросить про возмжные типа мероприятий
     MEETUP,
     CONFERENCE,
@@ -34,8 +35,10 @@ enum status{ // Добавть возможные статусы про кото
     APPROVED,
     CANCELED
 }
-public class event {
-    private static String name;
+
+public class Event {
+
+    public static String name;
     private static String speaker;  // ведущий
     private String director; // организатор
     private event_type type;
@@ -48,23 +51,31 @@ public class event {
     private int max_participant;
     //private DatePicker datePicker; // Разобраться что это за класс (https://vaadin.com/components/vaadin-date-picker/java-examples)
     private ArrayList<String>  tags;
+
     private ArrayList<File> files;
 
-
-    static  String get_name(){
+    public String getName(){
         return name;
     }
-    static String get_speaker(){
+    public String getSpeaker(){
         return speaker;
     }
 
-    event(){
+    public void setName(String name_){
+        name = name_;
+    }
+    public void setSpeaker(String speaker_){
+        speaker = speaker_;
+    }
+
+    public Event(){
         name = "test_event";
         speaker = "Vasily";
     }
+
     public static void main(String[] args){
-        event test_event = new event();
-        System.out.println("event name: " + test_event.get_name() + "\nevent speaker: "+ test_event.get_speaker());
+        //Event test_event = new Event();
+        //System.out.println("event name: " + test_event.get_name() + "\nevent speaker: "+ test_event.get_speaker());
     }
 
 }
